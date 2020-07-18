@@ -53,7 +53,7 @@ export function App() {
           key={id}
           id={id}
           value={color}
-          onChange={newColor => {
+          onChange={(newColor) => {
             dispatch({ type: 'updateColor', payload: { id, newColor } });
           }}
         />
