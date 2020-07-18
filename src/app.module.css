@@ -1,10 +1,22 @@
 .app {
   display: grid;
+  grid-template-rows: 1fr max-content;
+  grid-gap: 3rem;
+  min-height: 100vh;
+  padding: 4rem 1rem 1rem;
+}
+
+.grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, 14rem);
   grid-gap: 2rem;
   place-content: center;
-  min-height: 100vh;
-  padding: 4rem;
+}
+
+@media (min-width: 375px) {
+  .grid {
+    padding: 0 3rem;
+  }
 }
 
 .addColor {

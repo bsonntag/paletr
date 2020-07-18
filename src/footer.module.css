@@ -1,0 +1,12 @@
+.footer {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 1rem;
+  justify-content: end;
+  align-items: center;
+}
+
+.githubIcon {
+  display: block;
+  width: 24px;
+}

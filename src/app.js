@@ -3,6 +3,7 @@ import styles from './app.module.css';
 import { ColorBox } from './color-box';
 import Color from 'color';
 import { nanoid } from 'nanoid';
+import { Footer } from './footer';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -48,24 +49,28 @@ export function App() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   return (
     <div className={styles.app}>
-      {state.colors.map(({ id, color }) => (
-        <ColorBox
-          key={id}
-          id={id}
-          value={color}
-          onChange={(newColor) => {
-            dispatch({ type: 'updateColor', payload: { id, newColor } });
-          }}
-        />
-      ))}
+      <main className={styles.grid}>
+        {state.colors.map(({ id, color }) => (
+          <ColorBox
+            key={id}
+            id={id}
+            value={color}
+            onChange={(newColor) => {
+              dispatch({ type: 'updateColor', payload: { id, newColor } });
+            }}
+          />
+        ))}
 
-      <button
-        className={styles.addColor}
-        aria-label={'Add new color'}
-        onClick={() => dispatch({ type: 'addColor' })}
-      >
-        +
-      </button>
+        <button
+          className={styles.addColor}
+          aria-label={'Add new color'}
+          onClick={() => dispatch({ type: 'addColor' })}
+        >
+          +
+        </button>
+      </main>
+
+      <Footer />
     </div>
   );
 }
