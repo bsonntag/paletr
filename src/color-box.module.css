@@ -1,0 +1,36 @@
+.wrapper {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  overflow: hidden;
+  transition: 300ms ease;
+  transition-property: box-shadow, transform;
+}
+
+.wrapper:hover {
+  box-shadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.2);
+  transform: translateY(-4px);
+}
+
+.wrapper:focus-within {
+  transform: translateY(-4px);
+}
+
+.colorBox {
+  height: 8rem;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 2px 0;
+  border: 0;
+  border-bottom: 1px solid hsla(0, 0%, 80%);
+}

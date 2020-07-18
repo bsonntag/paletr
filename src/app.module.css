@@ -1,0 +1,30 @@
+.app {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 14rem);
+  grid-gap: 2rem;
+  place-content: center;
+  min-height: 100vh;
+  padding: 4rem;
+}
+
+.addColor {
+  height: 8rem;
+  width: 100%;
+  padding: 0 0 1rem;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  background-color: white;
+  color: hsl(0, 0%, 30%);
+  font-size: 6rem;
+  line-height: 6rem;
+  cursor: pointer;
+  transition: 300ms ease;
+  transition-property: box-shadow, transform;
+}
+
+.addColor:focus,
+.addColor:hover {
+  box-shadow: 0 6px 9px 0 hsla(0, 0%, 0%, 0.2);
+  transform: translateY(-4px);
+}
