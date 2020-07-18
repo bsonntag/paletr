@@ -29,7 +29,10 @@ export function ColorBox({ id, value, onChange }) {
         className={styles.colorBox}
         style={{ backgroundColor: color.toString() }}
       />
-      <form className={styles.form} onSubmit={event => event.preventDefault()}>
+      <form
+        className={styles.form}
+        onSubmit={(event) => event.preventDefault()}
+      >
         <label htmlFor={id + '_hex'}>Hex</label>
         <input
           ref={hexRef}
