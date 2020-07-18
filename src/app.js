@@ -61,6 +61,7 @@ export function App() {
 
       <button
         className={styles.addColor}
+        aria-label={'Add new color'}
         onClick={() => dispatch({ type: 'addColor' })}
       >
         +
