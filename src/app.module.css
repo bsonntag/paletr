@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 14rem);
   grid-gap: 2rem;
-  place-content: center;
+  place-content: flex-start;
 }
 
 @media (min-width: 375px) {
