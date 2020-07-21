@@ -50,6 +50,14 @@ export function App() {
   return (
     <div className={styles.app}>
       <main className={styles.grid}>
+        <button
+          className={styles.addColor}
+          aria-label={'Add new color'}
+          onClick={() => dispatch({ type: 'addColor' })}
+        >
+          +
+        </button>
+
         {state.colors.map(({ id, color }) => (
           <ColorBox
             key={id}
@@ -60,14 +68,6 @@ export function App() {
             }}
           />
         ))}
-
-        <button
-          className={styles.addColor}
-          aria-label={'Add new color'}
-          onClick={() => dispatch({ type: 'addColor' })}
-        >
-          +
-        </button>
       </main>
 
       <Footer />
