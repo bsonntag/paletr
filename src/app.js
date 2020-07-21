@@ -10,7 +10,7 @@ function reducer(state, action) {
     case 'addColor':
       return {
         ...state,
-        colors: state.colors.concat(createRandomColor()),
+        colors: [createRandomColor(), ...state.colors],
       };
 
     case 'updateColor':
