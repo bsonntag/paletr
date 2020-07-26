@@ -1,60 +1,40 @@
 import React from 'react';
-import Color from 'color';
 import styles from './color-box.module.css';
+import { HslInput, HexInput, RgbInput } from './inputs';
 
-export function ColorBox({ id, value, onChange }) {
-  const color = new Color(value);
-  const hexRef = React.useRef();
-  const rgbRef = React.useRef();
-  const hslRef = React.useRef();
-
-  React.useEffect(() => {
-    hexRef.current.value = color.hex().toString();
-    rgbRef.current.value = color.rgb().toString();
-    hslRef.current.value = color.hsl().toString();
-  });
-
-  function handleChange(event) {
-    try {
-      const newColor = new Color(event.target.value);
-      onChange(newColor.hsl().toString());
-    } catch (error) {
-      // Ignore.
-    }
-  }
-
+export function ColorBox({ id, color, onChange }) {
   return (
     <div className={styles.wrapper}>
-      <div
-        className={styles.colorBox}
-        style={{ backgroundColor: color.toString() }}
-      />
+      <div className={styles.colorBox} style={{ backgroundColor: color }} />
       <form
         className={styles.form}
         onSubmit={(event) => event.preventDefault()}
       >
         <label htmlFor={id + '_hex'}>Hex</label>
-        <input
-          ref={hexRef}
+        <HexInput
           className={styles.input}
           id={id + '_hex'}
-          onChange={handleChange}
+          name={id + '_hex'}
+          onChange={onChange}
+          color={color}
         />
 
         <label htmlFor={id + '_rgb'}>RGB</label>
-        <input
-          ref={rgbRef}
+        <RgbInput
           className={styles.input}
           id={id + '_rgb'}
-          onChange={handleChange}
+          name={id + '_rgb'}
+          onChange={onChange}
+          color={color}
         />
 
         <label htmlFor={id + '_hsl'}>HSL</label>
-        <input
-          ref={hslRef}
+        <HslInput
           className={styles.input}
           id={id + '_hsl'}
-          onChange={handleChange}
+          name={id + '_hsl'}
+          onChange={onChange}
+          color={color}
         />
       </form>
     </div>

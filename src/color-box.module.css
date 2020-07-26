@@ -32,5 +32,10 @@
   width: 100%;
   padding: 2px 0;
   border: 0;
-  border-bottom: 1px solid hsla(0, 0%, 80%);
+  border-bottom: 1px solid hsl(0, 0%, 80%);
+  transition: border-color 250ms ease;
+}
+
+.input:invalid {
+  border-color: hsl(0, 80%, 60%);
 }

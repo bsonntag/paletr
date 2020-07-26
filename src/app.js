@@ -62,7 +62,7 @@ export function App() {
           <ColorBox
             key={id}
             id={id}
-            value={color}
+            color={color}
             onChange={(newColor) => {
               dispatch({ type: 'updateColor', payload: { id, newColor } });
             }}
